@@ -1,0 +1,208 @@
+:root{
+    --video-width:60vw;
+}
+body{
+    font-family: 'JetBrains Mono', monospace;
+}
+main::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../img/mainPage/bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+main{
+    box-sizing: border-box;
+    padding:2vw 2vw;
+    width: 100%;
+    height:auto;
+    position: relative;
+    color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: serif;
+    font-family: 'JetBrains Mono', monospace;
+}
+.youtubeContainer.closed{
+    display: none;
+}
+.youtubeContainer{
+    position:fixed;
+    top:0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba(0,0,0, 0.8);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.youtubeContainer > iframe{
+    width: var(--video-width);
+    height:calc(var(--video-width) * 0.75);
+}
+.film{
+    color:rgba(255,255,255,0.6);
+    padding:2vw 3vw;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: rgba(255,255,255,0.1);
+    backdrop-filter:blur(2vw);
+    border-radius: 2vw;
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 40% 60%;
+    grid-gap: 2vw;
+    grid-template-areas:
+        "title title" 
+        "p r"
+        "p t";
+}
+.filmTitle{
+    grid-area: title;
+    text-align: center;
+    font-size: 3vw;
+}
+.filmPoster{
+    width: 100%;
+    border-radius: 2vw;
+    opacity: 0.9;
+    grid-area: p;
+}
+.rightSide{
+    grid-area: r;
+}
+
+.filmLinkContainer{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-bottom:1px solid rgba(255,255,255,0.3);
+    padding-bottom:1vw;
+}
+.watchTrailer{
+    font-size: 1.5vw;
+    padding:0.5vw 2vw;
+    border-radius: 2vw;
+    border:1px solid rgba(255,255,255,0.3);
+}
+.rating{
+    font-size: 1.8vw;
+    margin-left: 2vw;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.star{
+    width: 2vw;
+    margin-left: 0.5vw;
+}
+.filmDescription{
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    border-bottom:1px solid rgba(255,255,255,0.3);
+    padding-bottom:1vw;
+}
+.filmDescription > h2{
+    font-size: 2vw;
+}
+.mainActors{
+    margin-top: 1vw;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.actor{
+    margin-left: 1vw;
+}
+.actor:first-child{
+    margin-left: 0;
+}
+.actorAvatar{
+    border-radius: 2vw;
+    opacity: 0.8;
+    height:18vw;
+}
+.actorName{
+    font-size: 1.3vw;
+    text-align: center;
+}
+.filmDescriptionText{
+    padding-right:5vw;
+    font-size: 1.4vw;
+    margin-top: 1vw;
+    grid-area: t;
+}
+@media screen and (max-width:768px){
+    :root{
+        --video-width:90vw;
+    }
+    main::before{
+        background-repeat: repeat;
+        background-size: 100% auto;
+    }
+    .film{
+        grid-template-rows: repeat(4, min-content);
+        grid-template-columns: 100%;
+        grid-gap: 2vw;
+        grid-template-areas:
+            "title" 
+            "p"
+            "r"
+            "t";
+    }
+    .filmTitle{
+        font-size: 6vw;
+    }
+    .filmLinkContainer{
+        justify-content: center;
+        padding-bottom:3vw;
+    }
+    .watchTrailer{
+        font-size: 3.5vw;
+        padding:1.5vw 3vw;
+        border-radius: 6vw;
+    }
+    .rating{
+        font-size: 6vw;
+    }
+    .star{
+        width: 5vw;
+        margin-left: 1.5vw;
+    }
+    .filmDescription{
+        margin-top: 4vw;
+        padding-bottom:3vw;
+        align-items: center;
+    }
+    .filmDescription > h2{
+        font-size: 5vw;
+    }
+    .mainActors{
+        margin-top: 2vw;
+    }
+    .actor{
+        margin-left: 3vw;
+    }
+    .actorAvatar{
+        height:40vw;
+    }
+    .actorName{
+        font-size: 4vw;
+    }
+    .filmDescriptionText{
+        padding-right:0vw;
+        font-size: 3.4vw;
+        margin-top: 4vw;
+    }
+}

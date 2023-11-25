@@ -1,0 +1,180 @@
+.directors::before{
+    content:'';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgb(31, 105, 190),rgba(4, 41, 83,1), rgba(1, 25, 52,1 ));
+    background-repeat: repeat;
+    z-index: -1;
+}
+.directors{
+    position: relative;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding:4vw 2vw;
+}
+.directorsHeading{
+    color: var(--color-white);
+    font-size: var(--big-heading);
+}
+.directorsContainer{
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.director{
+    cursor: pointer;
+    width: 70%;
+    background-color: rgba(255,255,255,0.1);
+    padding:2vw 4vw;
+    border-radius: 3vw;
+    backdrop-filter: blur(2vw);
+    margin-bottom: 3vw;
+    overflow:hidden;
+}
+.director::before{
+    content:'';
+    position: absolute;
+    z-index: -1;
+    top:0;
+    left:-5vw;
+    width: 0.5vw;
+    height: 100%;
+    background-color: white;
+    transform:rotate(15deg);
+    animation-name:anim;
+    animation-duration:16s;
+    animation-iteration-count: infinite;
+}
+.directorTitle{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.directorTitle::before, .directorTitle::after{
+    position: absolute;
+    content:'';
+    right:0vw;
+    top:calc(50% - 3px);
+    width: 2vw;
+    height: 3px;
+    background-color: #fff;
+    transition:transform 0.5s ease;
+}
+.directorName{
+    color: var(--color-white);
+    font-size: 3vw;
+}
+
+.directorDescription{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    height:0;
+    overflow:hidden;
+    transition:all 0.6s ease;
+}
+.director.active::before{
+    animation-name:none;
+}
+.director.active > .directorDescription{
+    height:23vw;
+    margin-top: 2vw;
+}
+.director.active > .directorTitle::before{
+    transform:rotate(-45deg);
+}
+.director.active > .directorTitle::after{
+    transform:rotate(45deg);
+}
+.directorAvatar{
+    width: 30vw;
+}
+.directorText{
+    color: var(--color-white);
+    font-size: 1.3vw;
+    margin-left: 2vw;
+}
+.moreDirectorsPage{
+    padding:0.3vw 2vw;
+    background-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(2em);
+    border-radius: 2vw;
+    color: rgba(255,255,255,0.7);
+    font-size: 2vw;
+    text-decoration: none;
+    transition:all 0.5s ease;
+}
+.moreDirectorsPage:hover{
+    color:white;
+}
+#first::before{
+    animation-delay:2s;
+}
+
+#second::before{
+    animation-delay:4s;
+}
+
+#third::before{
+    animation-delay:6s;
+}
+
+#fourth::before{
+    animation-delay:8s;
+}
+
+#fifth::before{
+    animation-delay:10s;
+}
+
+#six::before{
+    animation-delay:2s;
+}
+@keyframes anim{
+    from{
+        left:0;
+    }
+    25%{
+        left: calc(100% + 6vw);
+    }
+    to{
+        left: calc(100% + 6vw);
+    }
+}
+@media screen and (max-width:768px){
+    .director::before{
+        left: -10vw;
+    }
+    .directorDescription{
+        display: block;
+    }
+    .director.active > .directorDescription{
+        height:45vw;
+        margin-top: 2vw;
+    }
+    .directorAvatar{
+        float:left;
+        width: 60%;
+        margin-right: 2vw;
+    }
+    .directorText{
+        margin-left: 0;
+        font-size: 2vw;
+    }
+    .moreDirectorsPage{
+        padding:1vw 3vw;
+        border-radius: 3vw;
+        font-size: 3vw;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в аккаунт</title>
+    <link rel="stylesheet" href="./styles/auth/main.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/mainPage/mainStyle.css">
+</head>
+<body>
+    <script defer src="./js/auth.js"></script>
+    <header>
+        <a href="./index.html" class="mainPage">Главная</a>
+        <a href="./directors.html" class="directorsPage">Режиссеры</a>
+        <a href="./film.html" class="filmsPage">Фильмы</a>
+        <a href="./account.html" class="accountsPage">Аккаунт</a>
+    </header>
+    <main>
+        <div class="container">
+            <div class="formTitle">
+                <button class="changeFormButton choosen reg">Регистрация</button>
+                <button class="changeFormButton auth">Авторизация</button>
+            </div>
+            <div class="formContainer">
+                <form action="" class="registration">
+                    <input type="text" name="name" placeholder="Имя">
+                    <input type="text" name="surname" placeholder="Фамилия">
+                    <input type="text" name="login" placeholder="Логин">
+                    <input type="text" name="password" placeholder="Пароль">
+                    <input type="text" name="repeatPassword" placeholder="Повторите пароль">
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
+                <form action="" class="authorization">
+                    <input type="text" name="login" placeholder="Логин">
+                    <input type="text" name="password" placeholder="Пароль">
+                    <button type="submit">Авторизоваться</button>
+                </form>
+            </div>
+            
+        </div>
+    </main>
+    <footer>
+        Контакты: Немойкина Ева Владиславовна ИКБО-36-22
+    </footer>
+</body>
+</html>

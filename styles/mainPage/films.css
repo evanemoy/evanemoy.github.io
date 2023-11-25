@@ -1,0 +1,110 @@
+.films{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--color-white);
+    padding:5vw 3vw;
+}
+.filmsHeading{
+    font-size:var(--big-heading);
+    text-align: center;
+}
+.filmsContainer{
+    width: 100%;
+    margin-top: 3vw;
+    gap: 1vw;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 27%);
+}
+.film{
+    position: relative;
+    width: 100%;
+    border-radius: 1vw;
+    overflow:hidden;
+}
+.filmImg{
+    width: 100%;
+    height:100%;
+    
+}
+.filmDescription{
+    overflow:hidden;
+    position: absolute;
+    backdrop-filter: blur(1vw);
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    transition:all 0.5s ease;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--color-white);
+}
+.film:hover > .filmDescription{
+    height:100%;
+    padding:0vw 0vw 1vw 0vw;
+}
+.filmDescriptionHeading{
+    font-size: 2vw;
+    text-align: center;
+}
+.filmDescriptionText{
+    text-align: center;
+    font-size: 1.5vw;
+    padding:0 1vw;
+}
+.filmDescriptionPage{
+    font-size: 2vw;
+    padding:0.1vw 2vw;
+    background-color: var(--color-white);
+    border-radius: 2vw;
+    color:var(--color-black);
+    text-decoration: none;
+}
+.watchMoreFilms{
+    margin-top: 3vw;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding:0.5vw 2vw;
+    border-radius: 2vw;
+    font-size: 2vw;
+    transition:all 0.6s ease;
+}
+.watchMoreFilms:hover{
+    border:1px solid black;
+    background-color: white;
+    color: black;
+}
+@media screen and (max-width:768px){
+    .filmsContainer{
+        grid-template-columns: repeat(2, 45%);
+    }
+    .filmDescription{
+        height: calc(100% - 4vw);
+        background-color: rgba(0,0,0,0.8);
+        backdrop-filter: none;
+        justify-content: space-between;
+        padding:2vw 0;
+    }
+    .film:hover > .filmDescription{
+        padding: 2vw 0 2vw 0;
+        height:calc(100% - 4vw);
+    }
+    .filmDescriptionHeading{
+        font-size: 3vw;
+    }
+    .filmDescriptionText{
+        font-size: 2.5vw;
+    }
+    .filmDescriptionPage{
+        font-size: 3vw;
+    }
+    .watchMoreFilms{
+        font-size: 3vw;
+    }
+}

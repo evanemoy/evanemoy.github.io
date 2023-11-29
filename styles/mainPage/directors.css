@@ -160,7 +160,7 @@
         display: block;
     }
     .director.active > .directorDescription{
-        height:45vw;
+        height:auto;
         margin-top: 2vw;
     }
     .directorAvatar{
@@ -170,7 +170,7 @@
     }
     .directorText{
         margin-left: 0;
-        font-size: 2vw;
+        font-size: 2.5vw;
     }
     .moreDirectorsPage{
         padding:1vw 3vw;

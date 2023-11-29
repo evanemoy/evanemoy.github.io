@@ -97,7 +97,7 @@ main{
 @media screen and (max-width:768px){
     .container{
         width: 80%;
-        height: 80%;
+        height: 70vw;
     }
     .changeFormButton{
         font-size: 5vw;

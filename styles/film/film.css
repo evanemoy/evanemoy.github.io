@@ -4,6 +4,9 @@
 body{
     font-family: 'JetBrains Mono', monospace;
 }
+.scrollDisabled{
+    overflow-y:hidden;
+}
 main::before{
     content:'';
     position: absolute;
